@@ -1,5 +1,12 @@
 import React from "react";
-import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+  Text,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 const Header = (props) => {
@@ -21,6 +28,21 @@ const Header = (props) => {
           <TouchableOpacity style={styles.headerBtn}>
             <Ionicons name="heart-outline" size="30" />
           </TouchableOpacity>
+          <TouchableOpacity>
+            <ImageBackground
+              source={require("../assets/messenger.png")}
+              style={{
+                width: 30,
+                height: 30,
+                justifyContent: "flex-start",
+                alignItems: "flex-end",
+              }}
+            >
+              <View style={styles.notificationBadge}>
+                <Text style={{ color: "white", fontSize: 10 }}>4</Text>
+              </View>
+            </ImageBackground>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -30,7 +52,7 @@ const Header = (props) => {
 const styles = StyleSheet.create({
   header: {
     alignItems: "flex-start",
-    height: 115,
+    height: 105,
     width: "100%",
   },
   logo: {
@@ -54,6 +76,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginRight: 10,
+  },
+  notificationBadge: {
+    width: 18,
+    height: 18,
+    backgroundColor: "#FF3E3E",
+    borderRadius: 50,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 

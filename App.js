@@ -1,6 +1,6 @@
 import React from "react";
-import HomeScreen from "./screens/HomeScreen";
+import Navigator from "./navigation/Navigator";
 
 export default function App() {
-  return <HomeScreen />;
+  return <Navigator />;
 }
