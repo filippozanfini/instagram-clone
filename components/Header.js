@@ -9,15 +9,17 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <View style={styles.header}>
       <View style={styles.headerContainer}>
-        <Image
-          style={styles.logo}
-          resizeMode="contain"
-          source={require("../assets/logo.png")}
-        />
+        <TouchableOpacity>
+          <Image
+            style={styles.logo}
+            resizeMode="contain"
+            source={require("../assets/logo.png")}
+          />
+        </TouchableOpacity>
         <View style={styles.btnContainer}>
           <TouchableOpacity style={styles.headerBtn}>
             <Image
@@ -26,7 +28,7 @@ const Header = (props) => {
             />
           </TouchableOpacity>
           <TouchableOpacity style={styles.headerBtn}>
-            <Ionicons name="heart-outline" size="30" />
+            <Ionicons name="heart-outline" size={30} />
           </TouchableOpacity>
           <TouchableOpacity>
             <ImageBackground
@@ -78,8 +80,8 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   notificationBadge: {
-    width: 18,
-    height: 18,
+    width: 16,
+    height: 16,
     backgroundColor: "#FF3E3E",
     borderRadius: 50,
     justifyContent: "center",
